@@ -1,55 +1,12 @@
-function initTmap(){
-	// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-if (navigator.geolocation) {
+var mapContainer = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var mapOption = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(37.56004728498993, 126.93688499998413), //지도의 중심좌표(연세대학교 교차로)
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
 
-    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-    navigator.geolocation.getCurrentPosition(function(position) {
+var map = new kakao.maps.Map(mapContainer, mapOption); //지도 생성 및 객체 리턴
 
-        var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-
-        var locPosition = new Tmapv2.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-
-        // 마커를 표시합니다
-        displayMarker(locPosition);
-
-      });
-
-} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치를 설정합니다
-
-    var locPosition = new Tmapv2.LatLng(37.56004728498993, 126.93688499998413);
-
-    displayMarker(locPosition);
-}
-
-function displayMarker(locPosition) {
-
-    // 마커를 생성합니다
-    var marker = new Tmapv2.Marker({  
-        position: locPosition,
-		map: map
-    }); 
-
-    // 지도 중심좌표를 접속위치로 변경합니다
-    map.setCenter(locPosition);      
-}    
-	var map = new Tmapv2.Map("map",  
-	{
-		center: new Tmapv2.LatLng(37.56004728498993, 126.93688499998413), // 지도 초기 좌표
-		width: "375px", 
-		height: "550px", // 지도의 사이즈
-		zoom: 16 // 지도의 레벨(확대, 축소 정도)
-	});
-
-	var marker = new Tmapv2.Marker({
-		position: new Tmapv2.LatLng(37.56004728498993, 126.93688499998413),
-		map: map
-	});	
-} 
-
-
-
-/*var lat;
+var lat;
 var lon;
 var options = {
 	enableHighAccuracy: true,
@@ -91,4 +48,4 @@ function displayMaker(locPosition, message) {
 	flag=true;
 
 	map.setCenter(locPosition);
-}*/
+}
