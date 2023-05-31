@@ -45,8 +45,13 @@ body {
     vertical-align: top;
 }
 .index-layer:nth-child(2) {
-    height: 550px;
+    height: 600px;
 }
 #map {
-    height: 550px;
+    height: 600px;
+}
+/*indexFindRoad 관련*/
+.index-layer:nth-child(3) iframe {
+    height: 800px;
+    width: 370px;
 }
