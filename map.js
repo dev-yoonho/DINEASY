@@ -31,7 +31,7 @@ function displayMarker(locPosition) {
     }); 
 
     // 지도 중심좌표를 접속위치로 변경합니다
-    map.getCenter(locPosition);      
+    map.etCenter(locPosition);      
 }    
 	var map = new Tmapv2.Map("map",  
 	{
