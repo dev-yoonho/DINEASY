@@ -762,6 +762,11 @@ var Vrecord = function(callback) {
 function startRecording() {
   Vrecord(function(firstKeyword) {
     console.log("The first keyword is: " + firstKeyword);
+    test_text.innerText("The first keyword is: " + firstKeyword)
   });
 }
+
+const test_text = document.querySelector("h2");
+
+
  
