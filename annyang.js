@@ -730,8 +730,8 @@
 };
 
 var Vrecord = function(callback) {
-  var keywords = ["한식","양식","중식","일식"];
-  let firstKeyword;
+  var keywords = ["한식","양식","중식","일식","분식"];
+  let category;
 
   annyang.start({ autoRestart: false, continuous: true });
   var recognition = annyang.getSpeechRecognizer();
@@ -740,33 +740,30 @@ var Vrecord = function(callback) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       user_speech += event.results[i][0].transcript;
       console.log('user_speech='+user_speech);
-      if (user_speech.includes("한식") || user_speech.includes("중식") || user_speech.includes("양식") || user_speech.includes("일식")) {
+      if (user_speech.includes("한식") || user_speech.includes("중식") || user_speech.includes("양식") || user_speech.includes("일식")|| user_speech.includes("분식")) {
         Rpause();
         let firstIndex = Infinity;
         for (let keyword of keywords) {
           let index = user_speech.indexOf(keyword);
           if (index !== -1 && index < firstIndex) {
-            firstKeyword = keyword;
+            category = keyword;
             firstIndex = index;
-            console.log(firstKeyword)
+            console.log(category)
           }
         }
       }
     }
 
-    // Call the callback function with the firstKeyword
-    callback(firstKeyword);
+    // Call the callback function with the category
+    callback(category);
   };
 };
 
 function startRecording() {
-  Vrecord(function(firstKeyword) {
-    console.log("The first keyword is: " + firstKeyword);
-    test_text.innerText("The first keyword is: " + firstKeyword)
+  Vrecord(function(category) {
+    console.log("The first keyword is: "+category);
+    
   });
+  
 }
-
-const test_text = document.querySelector("h2");
-
-
- 
+export {category}; 
