@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="getRoad()">출력</button>
+        <div id="roadinfo"></div>
+        <script>
+            function getRoad() {
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        accept: 'application/json',
+                        appKey: 'e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5',
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        startX: 126.936879,
+                        startY: 37.555298,
+                        angle: 20,
+                        speed: 5,
+                        endPoiId: '10001',
+                        endX: 126.936978,
+                        endY: 37.559779,
+                        reqCoordType: 'WGS84GEO',
+                        startName: '%EC%B6%9C%EB%B0%9C',
+                        endName: '%EB%8F%84%EC%B0%A9',
+                        searchOption: '0',
+                        resCoordType: 'WGS84GEO',
+                        sort: 'index'
+                    })
+                };
+
+                fetch('https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&callback=function', options)
+                    .then(response => response.json())
+                    .then(response => {
+                        const outputElement = document.getElementById('roadinfo'); // 출력할 요소 선택
+                        const features = response.features; // 'features' 배열 선택
+
+                        // 'features' 배열의 내용을 순서대로 출력
+                        features.forEach((feature, index) => {
+                            const coordinates = JSON.stringify(feature.geometry.coordinates);
+                            const description = JSON.stringify(feature.properties.description);
+                            const output = `Coordinates: ${coordinates}, Description: ${description}`;
+                            outputElement.innerHTML += `<p>${output}</p>`;
+                        });
+                })
+                    .catch(err => console.error(err)); 
+            }
+        </script>
+    </body>
+</html>
