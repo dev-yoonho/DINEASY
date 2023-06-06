@@ -1,4 +1,4 @@
-var category = '한식' //window.localStorage.getItem('category');
+var category = window.localStorage.getItem('category');
 let locat = window.localStorage.getItem('location');
 
 function changeCategory(value) {
