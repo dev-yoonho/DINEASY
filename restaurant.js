@@ -1,4 +1,5 @@
-var category = window.localStorage.getItem('category');
+var category = '한식' //window.localStorage.getItem('category');
+let locat = window.localStorage.getItem('location');
 
 function changeCategory(value) {
     let result = value;
@@ -14,11 +15,15 @@ function changeCategory(value) {
 }
 
 let restaurants;
-let categoryRests = [];
+let restList = [];
 
 (async () => {
     restaurants = await getRestaurants();
-    categoryRest();
+    if (!category) {
+        locationRest();
+    } else {
+        categoryRest();
+    }
 })()
 
 async function getRestaurants() {
@@ -29,13 +34,30 @@ async function getRestaurants() {
 function categoryRest() {
 
     let filtered = restaurants.filter(restaurant => restaurant.uptaenm == changeCategory(category));
-    categoryRests.push(...filtered);
+    restList.push(...filtered);
 
-    show(categoryRests);
+    show(restList, 0);
 }
 
-function show(rests) {
-    document.querySelector('#header').innerText = "카테고리: " + category;
+function locationRest() {
+
+    let filtered = restaurants.filter(restaurant => restaurant.sitewhladdr && restaurant.sitewhladdr.includes(locat));
+    restList.push(...filtered);
+
+    show(restList, 1);
+}
+
+function show(rests, s) {
+    let header = document.querySelector('#header');
+
+    switch(s) {
+        case 0:
+            header.innerText = "카테고리: " + category;
+            break;
+        case 1:
+            header.innerText = "위치: " + locat;
+            break;
+    }
 
     let parent = document.querySelector('.parent');
 
@@ -43,6 +65,8 @@ function show(rests) {
 
         let box = document.createElement('button');
         box.classList.add('buttonRest');
+        box.addEventListener('click', () =>
+            restSelect(rest));
 
         let name = document.createElement('b');
         name.classList.add('restaurantName')
@@ -59,3 +83,10 @@ function show(rests) {
 
     }
 }
+
+function restSelect(rest)  {
+    var selectedRest = [rest.bplcnm, rest.uptaenm, rest.sitewhladdr];
+    var selectedRestStr = JSON.stringify(selectedRest);
+    localStorage.setItem('selectedRestaurant', selectedRestStr);
+    window.location.href = './Component6.html';
+  }
