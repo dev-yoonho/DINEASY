@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Component2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+    <script src="./restaurant.js"></script>
+  </head>
+  <body>
+    <div class="div20">
+      <img class="icon18" alt="" src="./public/7@2x.png" />
+
+      <div class="div21">
+        <div class="child23"></div>
+        <b id ="header" class="b35">
+          <!--가까운 음식점 or 카테고리별 음식점 title-->
+        </b>
+        <button class="button35" id="button">
+          <img class="vector-icon7" alt="" src="./public/vector5.svg" />
+        </button>
+      </div>
+
+      <div class="parent">
+        <!--여기에 음식 리스트-->
+      </div>
+
+      <div id="desciption">
+        <!--여기에 식당 설명-->
+      </div>
+
+      <div class="div22"></div>
+      <div class="voice-navigation1">
+        <button class="mic-icon2" id="micIcon">
+          <img class="mic-icon3" alt="" src="./public/mic1.svg" />
+        </button>
+        <button class="speaker-icon2" id="speakerIcon">
+          <img class="speaker-icon3" alt="" src="./public/speaker1.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu2.html";
+        });
+      }
+      
+      var micIcon = document.getElementById("micIcon");
+      if (micIcon) {
+        micIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component4.html";
+        });
+      }
+      
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      </script>
+
+
+
+  </body>
+</html>

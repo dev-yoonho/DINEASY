@@ -13,22 +13,17 @@ function changeCategory(value) {
     return result;
 }
 
-let showNum = 8;
-const scrollAddition = 4;
 let restaurants;
-let categoryRests;
+let categoryRests = [];
 
 (async () => {
     restaurants = await getRestaurants();
-
     categoryRest();
-    scrollToEnd();
 })()
 
 async function getRestaurants() {
     let res = await fetch('./restaurant.json');
-
-    return res.DATA.json();
+    return res.json();
 }
 
 function categoryRest() {
@@ -36,49 +31,31 @@ function categoryRest() {
     let filtered = restaurants.filter(restaurant => restaurant.uptaenm == changeCategory(category));
     categoryRests.push(...filtered);
 
-    console.log(categoryRests);
-
-    show(categoryRests, showNum);
+    show(categoryRests);
 }
 
-function show(rests, num) {
-    document.querySelector('header').innerText = category + '음식';
+function show(rests) {
+    document.querySelector('#header').innerText = "카테고리: " + category;
 
-    let parent = document.querySelector('parent');
+    let parent = document.querySelector('.parent');
 
-    for (let rest of rests.slice(0, num)) {
+    for (let rest of rests) {
 
         let box = document.createElement('button');
         box.classList.add('buttonRest');
 
-        let img = document.createElement('img');
-        img.scr = '';
-        img.alt = rest.bplcnm;
-        img.classList.add('image-icon');
-
         let name = document.createElement('b');
+        name.classList.add('restaurantName')
         name.innerText = rest.bplcnm;
 
-        let info = documnet.createElement('p');
+        let info = document.createElement('p');
+        info.classList.add('restaurantInfo');
         info.innerText = '종류: ' + rest.uptaenm + '\n' + '주소: ' + rest.sitewhladdr;
 
         box.appendChild(name);
-        box.appendChild(img);
         box.appendChild(info);
 
         parent.appendChild(box);
 
-    }
-}
-
-function scrollToEnd() {
-    window.scroll = () => {
-        let val = window.scrollY + window.innerHeight - document.body.offsetHeight;
-
-        if (val == 0) {
-            console.log(true);
-            showNum += scrollAddition;
-            show(categoryRests, showNum);
-        }
     }
 }
