@@ -17,7 +17,6 @@
   </head>
   <body>
     <div class="div32">
-      <div class="div33"></div>
       <div class="div34">
         <b class="b45">
           <!--식당 이름-->
@@ -25,7 +24,7 @@
         <p class="m6">
           <!--식당 정보-->
         </p>
-        <img class="image-2-icon" alt="" src="./public/image-2@2x.png" />
+        <img id="restImg" alt="" src="./restImg/init.png" />
       </div>
       <div class="div35">
         <b class="b46">음식점 정보</b>
@@ -39,11 +38,9 @@
 
           <b class="b47">안내 시작</b>
         </button>
-        <button class="button44">
+        <button class="button44" onclick="location.href='./Component2.html'">
           <img class="vector-icon12" alt="" src="./public/vector7.svg" />
-
           <img class="vector-icon13" alt="" src="./public/vector8.svg" />
-
           <img class="vector-icon14" alt="" src="./public/vector9.svg" />
         </button>
       </div>
@@ -60,12 +57,6 @@
     </div>
 
     <script>
-      var micIcon = document.getElementById("micIcon");
-      if (micIcon) {
-        micIcon.addEventListener("click", function (e) {
-          window.location.href = "./Component4.html";
-        });
-      }
       
       var speakerIcon = document.getElementById("speakerIcon");
       if (speakerIcon) {
@@ -79,6 +70,12 @@
 
       document.querySelector('.b45').innerText = rest[0];
       document.querySelector('.m6').innerText = '종류: ' + rest[1] + '\n' + '주소: ' + rest[2];
+
+      img = document.querySelector('#restImg');
+      img.src = `./restImg/${rest[0]}.png`;
+      img.addEventListener("error", ()=> {
+            img.src = './restImg/init.png';
+        });
 
       </script>
   </body>

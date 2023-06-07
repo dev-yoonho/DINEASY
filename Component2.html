@@ -16,6 +16,7 @@
     />
     <script src="./restaurant.js"></script>
   </head>
+
   <body>
     <div class="div20">
       <img class="icon18" alt="" src="./public/7@2x.png" />
@@ -30,15 +31,12 @@
         </button>
       </div>
 
-      <div class="parent">
+      <div class="resList">
         <!--여기에 음식 리스트-->
       </div>
 
-      <div class="div22"></div>
+      <div class="gradient"></div>
       <div class="voice-navigation1">
-        <button class="mic-icon2" id="micIcon">
-          <img class="mic-icon3" alt="" src="./public/mic1.svg" />
-        </button>
         <button class="speaker-icon2" id="speakerIcon">
           <img class="speaker-icon3" alt="" src="./public/speaker1.svg" />
         </button>
@@ -53,13 +51,6 @@
         });
       }
       
-      var micIcon = document.getElementById("micIcon");
-      if (micIcon) {
-        micIcon.addEventListener("click", function (e) {
-          window.location.href = "./Component4.html";
-        });
-      }
-      
       var speakerIcon = document.getElementById("speakerIcon");
       if (speakerIcon) {
         speakerIcon.addEventListener("click", function (e) {
@@ -67,8 +58,5 @@
         });
       }
       </script>
-
-
-
   </body>
 </html>

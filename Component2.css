@@ -1,34 +1,64 @@
+.gradient {
+  position: absolute;
+  top: 503px;
+  left: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0),
+    rgba(0, 0, 0, 0.59)
+  );
+  width: 380px;
+  height: 139px;
+}
+
+.resList {
+  position: absolute;
+  top: 72px;
+  left: 25px;
+  width: 370px;
+  height: 568px;
+  overflow-y: auto;
+}
+
 .buttonRest {
   cursor: pointer;
-  border-radius: var(--br-11xl);
+  border-radius: 30px;
   background-color: var(--color-white);
   border: 5px solid var(--color-black);
   box-sizing: border-box;
-  width: 329px;
-  height: 227px;
+  width: 330px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .image-icon {
-  border-radius: var(--br-11xl);
+  border-radius: 25px;
   width: 112px;
   height: 112px;
   object-fit: cover;
+  position: absolute;
+  left: 39px;
 }
 
 .restaurantName {
   font-size: 25px;
   font-family: var(--font-inter);
-  color: var(--color-black);
+  color: black;
   text-align: center;
 }
 
 .restaurantInfo {
-  font-size: var(--font-size-6xl);
+  width: 150px;
+  height: 150px;
   font-family: var(--font-inter);
   color: var(--color-black);
   text-align: left;
-  margin-left: 150px;
   font-size: large;
+  position: relative;
+  left: 150px;
 }
 
 .icon18 {
@@ -186,28 +216,8 @@
   object-fit: cover;
 }
 
-.div22,
-.parent {
-  position: absolute;
-}
-.parent {
-  top: 72px;
-  left: 25px;
-  width: 370px;
-  height: 568px;
-  overflow-y: auto;
-}
-.div22 {
-  top: 503px;
-  left: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(217, 217, 217, 0),
-    rgba(0, 0, 0, 0.59)
-  );
-  width: 362px;
-  height: 139px;
-}
+
+
 .mic-icon2,
 .mic-icon3 {
   position: absolute;
