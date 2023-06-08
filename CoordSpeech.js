@@ -81,10 +81,11 @@ if ("geolocation" in navigator) {
           var distance = getDistanceFromLatLonInKm(position.coords.latitude, position.coords.longitude, pointCoords[0], pointCoords[1]);
           
           if (distance <= 10 && !feature.announced) { // Check if the distance is less than or equal to 10 meters and if the feature hasn't been announced yet
-            console.log(`${feature.properties.description}  / 불러 오기 성공`);
-            speech(`${feature.properties.description}`);
+            const description = JSON.stringify(feature.properties.description);
+            console.log(`${description}  / 불러 오기 성공`);
+            speech(`${description}`);
             var outputDiv = document.getElementById('textOutput'); 
-            outputDiv.textContent = `${feature.properties.description}`; 
+            outputDiv.textContent = `${description}`; 
             feature.announced = true; // Set the "announced" flag to true so this feature isn't announced again
           }
         }
