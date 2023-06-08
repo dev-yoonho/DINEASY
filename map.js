@@ -266,8 +266,7 @@ function removeQuotesAndBrackets(sentence) {
   return sentence.replace(regex, '');
 }
 
-const address = '["391-12 Hapjeong-dong, Mapo-gu, Seoul"]';
-const result_addr = removeQuotesAndBrackets(address);
+var result_addr = removeQuotesAndBrackets(restaurantCoordsParts);
 
 var restaurantcoordinates=[];
 AddressToCoordinates(result_addr);
