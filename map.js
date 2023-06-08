@@ -260,8 +260,16 @@ var currentCoords = coordsParts.map(function (part) {
 
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
+
+function removeSquareBrackets(address) {
+  return address.replace(/\[|\]/g, '');
+}
+
+const addressWithBrackets = restaurantCoordsParts;
+const addressWithoutBrackets = removeSquareBrackets(addressWithBrackets);
+
 var restaurantcoordinates=[];
-AddressToCoordinates("서울특별시 마포구 합정동 391-12");
+AddressToCoordinates(addressWithoutBrackets);
 
 function AddressToCoordinates(address) {
   var headers = {};
