@@ -209,6 +209,12 @@ function drawLine(arrPoint) {
   resultdrawArr.push(polyline_);
 }
 
+let data = [
+  [37.5605672, 126.9433486, "현재 위치"]
+];
+console.log("실행됨 0")
+let printedDescriptions = new Set();
+
 function success(position) {
   console.log(position);
   (lat = position.coords.latitude), // 위도
@@ -217,6 +223,16 @@ function success(position) {
   localStorage.setItem("currentCoords", `${lat}, ${lon}`);
 
   var locPosition = new Tmapv2.LatLng(lat, lon);
+
+  data.forEach(([dataLat, dataLon, description]) => {
+    console.log("실행됨 3")
+      if (getDistanceFromLatLonInKm(lat, lon, lat, lon) <= 10 && !printedDescriptions.has(description)) {
+        console.log("실행됨 4")  
+        console.log(description);
+          speech(description);
+          printedDescriptions.add(description);
+      }
+  });
 
   // 마커와 인포윈도우를 표시
   displayMaker(locPosition);
@@ -586,4 +602,29 @@ function AddressToCoordinates(address) {
       $("#result").html("");
     },
   });
+}
+
+
+
+
+
+// 좌표 거리 계산
+
+
+function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+  console.log("실행됨 2")
+var R = 6371; // Radius of the earth in km
+var dLat = deg2rad(lat2-lat1);  // deg2rad below
+var dLon = deg2rad(lon2-lon1); 
+var a = 
+  Math.sin(dLat/2) * Math.sin(dLat/2) +
+  Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+  Math.sin(dLon/2) * Math.sin(dLon/2); 
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+var d = R * c; // Distance in km
+return d * 1000; // Distance in m
+}
+
+function deg2rad(deg) {
+return deg * (Math.PI/180)
 }
