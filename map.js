@@ -261,10 +261,9 @@ var currentCoords = coordsParts.map(function (part) {
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
-
+AddressToCoordinates(restaurantCoordsParts);
 
 function AddressToCoordinates(address) {
-  var fullAddr = $("#fullAddr").val();
   var headers = {};
   headers["appKey"] = "KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW";
   $.ajax({
