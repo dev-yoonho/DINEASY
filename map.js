@@ -67,8 +67,8 @@ function initTmap() {
     data: {
       startX: currentCoords[1],
       startY: currentCoords[0],
-      endX: restaurantCoordinates[1],
-      endY: restaurantCoordinates[0],
+      endX: 126.936130,
+      endY: 37.559419,
       reqCoordType: "WGS84GEO",
       resCoordType: "EPSG3857",
       startName: "출발지",
@@ -261,7 +261,7 @@ var currentCoords = coordsParts.map(function (part) {
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
-AddressToCoordinates(restaurantCoordsParts);
+console.log("전체 주소 :"+restaurantCoordsParts);
 
 function AddressToCoordinates(address) {
   var headers = {};
