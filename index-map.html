@@ -8,12 +8,77 @@
     <script src="map.js"></script>
     <script src="sayThis.js"></script>
     <script src="coordSpeech.js"></script>
-    <script>AddressToCoordinates(restaurantCoordsParts)</script>
+    <script>
+      AddressToCoordinates(restaurantCoordsParts);
+    </script>
   </head>
   <body onload="initTmap()">
     <!-- 맵 생성 실행 -->
     <div id="map_div"></div>
     <div id="textOutput"></div>
+    <!-- 말하기 버튼 -->
     <button id="btn" type="button" onclick="sayAgain()">다시말하기</button>
+    <!-- coordinatesAndDescriptions 배열 불러오기 -->
+    <script>
+      function getRoad() {
+        const options = {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            appKey: "e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            startX: 126.936879,
+            startY: 37.555298,
+            angle: 20,
+            speed: 5,
+            endPoiId: "10001",
+            endX: 126.936978,
+            endY: 37.559779,
+            reqCoordType: "WGS84GEO",
+            startName: "%EC%B6%9C%EB%B0%9C",
+            endName: "%EB%8F%84%EC%B0%A9",
+            searchOption: "0",
+            resCoordType: "WGS84GEO",
+            sort: "index",
+          }),
+        };
+
+        var coordinatesAndDescriptions = [];
+
+        fetch(
+          "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&callback=function",
+          options
+        )
+          .then((response) => response.json())
+          .then((response) => {
+            console.log(response);
+            var coordinatesAndDescriptions = [];
+            for (var i = 0; i < response.features.length; i++) {
+              var feature = response.features[i];
+              if (
+                feature.type === "Feature" &&
+                feature.geometry.type === "Point"
+              ) {
+                const coordinates = feature.geometry.coordinates;
+                const description = feature.properties.description;
+                console.log("Coordinates:", coordinates);
+                console.log("Description:", description);
+                var tempBox = [coordinates[1], coordinates[0], description];
+                coordinatesAndDescriptions.push(tempBox);
+              }
+            }
+            console.log(
+              "coordinatesAndDescriptions[0][1]:",
+              coordinatesAndDescriptions[0][1]
+            );
+            console.log(
+              "coordinatesAndDescriptions[3][2]:",
+              coordinatesAndDescriptions[3][2]
+            );
+          });
+      }
+    </script>
   </body>
 </html>
