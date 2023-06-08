@@ -1,15 +1,3 @@
-// Get the stored coordinates
-var coordsString = localStorage.getItem('currentCoords');
-// Split the string into parts
-var coordsParts = coordsString.split(",");
-
-// Convert each part to a number and store in an array
-var currentCoords = coordsParts.map(function(part) {
-  return parseFloat(part);
-});
-
-var restaurantcoordinates = [/* coordinates for restaurant goes here */];
-
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
@@ -81,11 +69,10 @@ if ("geolocation" in navigator) {
           var distance = getDistanceFromLatLonInKm(position.coords.latitude, position.coords.longitude, pointCoords[0], pointCoords[1]);
           
           if (distance <= 10 && !feature.announced) { // Check if the distance is less than or equal to 10 meters and if the feature hasn't been announced yet
-            const description = JSON.stringify(feature.properties.description);
-            console.log(`${description}  / 불러 오기 성공`);
-            speech(`${description}`);
+            console.log(JSON.stringify(feature.properties.description)+  "불러 오기 성공`");
+            speech(JSON.stringify(feature.properties.description));
             var outputDiv = document.getElementById('textOutput'); 
-            outputDiv.textContent = `${description}`; 
+            outputDiv.textContent = `${feature.properties.description}`; 
             feature.announced = true; // Set the "announced" flag to true so this feature isn't announced again
           }
         }
