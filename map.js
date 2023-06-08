@@ -265,7 +265,7 @@ function removeSquareBrackets(address) {
   return address.replace(/\[|\]/g, '');
 }
 
-const addressWithBrackets = restaurantCoordsParts;
+const addressWithBrackets = `'${restaurantCoordsParts}'`;
 const addressWithoutBrackets = removeSquareBrackets(addressWithBrackets);
 
 var restaurantcoordinates=[];
