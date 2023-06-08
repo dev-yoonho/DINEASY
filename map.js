@@ -261,7 +261,7 @@ var currentCoords = coordsParts.map(function (part) {
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
-AddressToCoordinates(restaurantCoordsParts);
+
 
 function AddressToCoordinates(address) {
   var fullAddr = $("#fullAddr").val();
