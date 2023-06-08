@@ -47,8 +47,8 @@ function initTmap() {
   // 도착
   marker_e = new Tmapv2.Marker({
     position: new Tmapv2.LatLng(
-      restaurantCoordinates[0],
-      restaurantCoordinates[1]
+      restaurantcoordinates[0],
+      restaurantcoordinates[1]
     ),
     icon: "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png",
     iconSize: new Tmapv2.Size(24, 38),
@@ -67,8 +67,8 @@ function initTmap() {
     data: {
       startX: currentCoords[1],
       startY: currentCoords[0],
-      endX: restaurantCoordinates[1],
-      endY: restaurantCoordinates[0],
+      endX: restaurantcoordinates[1],
+      endY: restaurantcoordinates[0],
       reqCoordType: "WGS84GEO",
       resCoordType: "EPSG3857",
       startName: "출발지",
@@ -260,9 +260,9 @@ var currentCoords = coordsParts.map(function (part) {
 
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
-
+var restaurantcoordinates=[];
 AddressToCoordinates("서울특별시 마포구 합정동 391-12");
-var restaurantCoordinates=[];
+
 function AddressToCoordinates(address) {
   var headers = {};
   headers["appKey"] = "KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW";
@@ -288,7 +288,7 @@ function AddressToCoordinates(address) {
         );
         var restaurantLat = response.coordinateInfo.coordinate[0].lat;
         var restaurantLon = response.coordinateInfo.coordinate[0].lon;
-        restaurantCoordinates = [restaurantLat, restaurantLon];
+        restaurantcoordinates = [restaurantLat, restaurantLon];
       } else {
         console.log(
           `목적지 신주소 x좌표:` + response.coordinateInfo.coordinate[0].newLat
@@ -298,7 +298,7 @@ function AddressToCoordinates(address) {
         );
         var restaurantLat = response.coordinateInfo.coordinate[0].newLat;
         var restaurantLon = response.coordinateInfo.coordinate[0].newLon;
-        restaurantCoordinates = [restaurantLat, restaurantLon];
+        restaurantcoordinates = [restaurantLat, restaurantLon];
       }
 
       // 3.마커 찍기
