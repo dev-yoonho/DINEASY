@@ -1,0 +1,132 @@
+.headphone-icon-1 {
+  position: absolute;
+  top: 41px;
+  left: 114px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.p24 {
+  margin: 0;
+}
+.b41 {
+  position: absolute;
+  top: 173px;
+  left: 28px;
+  display: inline-block;
+  width: 279px;
+}
+.child30,
+.div27 {
+  width: 329px;
+  height: 347px;
+}
+.child30 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gray-100);
+  border: 5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div27 {
+  top: 130px;
+  left: 17px;
+}
+.b42,
+.child31,
+.div27 {
+  position: absolute;
+}
+.child31 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavenderblush);
+  width: 362px;
+  height: 72px;
+}
+.b42 {
+  top: 19px;
+  left: 126px;
+}
+.button40,
+.vector-icon9 {
+  position: absolute;
+  overflow: hidden;
+}
+.vector-icon9 {
+  height: 76.35%;
+  width: 97.58%;
+  top: 11.62%;
+  right: 0.98%;
+  bottom: 12.03%;
+  left: 1.45%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.button40 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 19px;
+  left: 18px;
+  width: 37px;
+  height: 37px;
+}
+.div28,
+.mic-icon6,
+.mic-icon7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 362px;
+  height: 72px;
+}
+.mic-icon6,
+.mic-icon7 {
+  width: 112px;
+  height: 112px;
+}
+.mic-icon6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.speaker-icon6,
+.speaker-icon7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 79px;
+  height: 79px;
+}
+.speaker-icon6 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 16px;
+  left: 134px;
+}
+.voice-navigation3 {
+  position: absolute;
+  top: 511px;
+  left: 133px;
+  width: 213px;
+  height: 112px;
+}
+.div26 {
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-9xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

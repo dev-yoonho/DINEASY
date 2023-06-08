@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Component3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div23">
+      <div class="div24">
+        <img class="icon19" alt="" src="./public/--icon.svg" />
+
+        <b class="b39">
+          <p class="p21">현재 페이지에 관해</p>
+          <p class="p21">음성 안내가 나오는</p>
+          <p class="p21">중 입니다.</p>
+        </b>
+        <div class="child28"></div>
+      </div>
+      <div class="div25">
+        <div class="child29"></div>
+        <b class="b40">음성 안내</b>
+        <button class="button39" id="button">
+          <img class="vector-icon8" alt="" src="./public/vector3.svg" />
+        </button>
+      </div>
+      <div class="voice-navigation2">
+        <button class="mic-icon4" id="micIcon">
+          <img class="mic-icon5" alt="" src="./public/mic2.svg" />
+        </button>
+        <button class="speaker-icon4" id="speakerIcon">
+          <img class="speaker-icon5" alt="" src="./public/speaker2.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu1.html";
+        });
+      }
+      
+      var micIcon = document.getElementById("micIcon");
+      if (micIcon) {
+        micIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component4.html";
+        });
+      }
+      
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "Component3.html";
+        });
+      }
+      </script>
+  </body>
+</html>

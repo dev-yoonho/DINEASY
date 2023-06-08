@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./HomeMap.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home-map">
+      <img class="icon2" alt="" src="./public/1@2x.png" />
+
+      <img
+        class="voice-navigation-icon"
+        alt=""
+        src="./public/voice-navigation.svg"
+      />
+
+      <div class="voice-navigation-icon">
+        <button class="mic-icon" id="micIcon">
+          <img class="mic-icon1" alt="" src="./public/mic.svg" />
+        </button>
+        <button class="speaker-icon" id="speakerIcon">
+          <img class="speaker-icon1" alt="" src="./public/speaker.svg" />
+        </button>
+      </div>
+      <img class="icon3" alt="" src="./public/2.svg" />
+
+      <div class="div">
+        <div class="child"></div>
+        <b class="b2">현재 위치</b>
+        <button class="button2" id="button">
+          <img class="vector-icon" alt="" src="./public/vector.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var micIcon = document.getElementById("micIcon");
+      if (micIcon) {
+        micIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component4.html";
+        });
+      }
+      
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu3.html";
+        });
+      }
+      </script>
+  </body>
+</html>

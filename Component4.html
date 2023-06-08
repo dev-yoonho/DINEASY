@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src='annyang.js'>
+
+    </script>
+
+
+
+<script> // 여기서부터 음성 녹음 및 로컬 스토리지에 저장, 다음 페이지로 넘어가는 스크립트.//
+  var category;
+  var Vrecord = function(callback) {
+    console.log("음성 인식 중");
+  
+    var keywords = ["한식","양식","중식","일식","분식"];
+    let firstKeyword;
+  
+    annyang.start({ autoRestart: false, continuous: true });
+    var recognition = annyang.getSpeechRecognizer();
+    recognition.onresult = function(event) {
+      var user_speech = '';
+      for (var i = event.resultIndex; i < event.results.length; ++i) {
+        user_speech += event.results[i][0].transcript;
+        console.log('user_speech='+user_speech);
+        if (user_speech.includes("한식") || user_speech.includes("중식") || user_speech.includes("양식") || user_speech.includes("일식")|| user_speech.includes("분식")) {
+          Rpause();
+          let firstIndex = Infinity;
+          for (let keyword of keywords) {
+            let index = user_speech.indexOf(keyword);
+            if (index !== -1 && index < firstIndex) {
+              firstKeyword = keyword;
+              firstIndex = index;
+              console.log(firstKeyword)
+            }
+          }
+        }
+      }
+  
+      // Call the callback function with the firstKeyword
+      callback(firstKeyword);
+    };
+  };
+  
+  
+  startRecording = function() {
+    Vrecord(function(firstKeyword) {
+      console.log("The first keyword is: "+firstKeyword);
+      category = firstKeyword;
+      handleCategoryChange(category);
+      goNext("index.html");
+
+    });
+  };
+
+  function handleCategoryChange(category) {
+    // 다른 스크립트 파일에서 사용할 수 있도록 전역 변수로 설정
+    localStorage.setItem('category', category);
+    }
+  
+              document.addEventListener("DOMContentLoaded",startRecording); 
+                                                                            //여기까지~!
+    </script> 
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Component4.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div26">
+      <div class="div27">
+        <img
+          class="headphone-icon-1"
+          alt=""
+          src="./public/headphone-icon-1.svg"
+        />
+
+        <b class="b41">
+          <p class="p24">음성 명령을</p>
+          <p class="p24">말해주세요</p>
+        </b>
+        <div class="child30"></div>
+      </div>
+      <div class="div28">
+        <div class="child31"></div>
+        <b class="b42">음성 명령</b>
+        <button class="button40" id="button">
+          <img class="vector-icon9" alt="" src="./public/vector3.svg" />
+        </button>
+      </div>
+      <div class="voice-navigation3">
+        <button class="mic-icon6" id="micIcon">
+          <img class="mic-icon7" alt="" src="./public/mic3.svg" />
+        </button>
+        <button class="speaker-icon6" id="speakerIcon">
+          <img class="speaker-icon7" alt="" src="./public/speaker3.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu1.html";
+        });
+      }
+      
+      var micIcon = document.getElementById("micIcon");
+      if (micIcon) {
+        micIcon.addEventListener("click", function (e) {
+          window.location.href = "Component4.html";
+        });
+      }
+      
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      </script>
+  </body>
+</html>

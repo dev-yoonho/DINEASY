@@ -1,0 +1,243 @@
+.icon6 {
+  position: absolute;
+  top: 19px;
+  left: 0;
+  width: 464px;
+  height: 737px;
+  object-fit: cover;
+}
+.voice-navigation-icon1 {
+  position: absolute;
+  top: 518px;
+  left: 134px;
+  width: 213px;
+  height: 112px;
+}
+.b11,
+.child4 {
+  position: absolute;
+}
+.child4 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavenderblush);
+  width: 362px;
+  height: 72px;
+}
+.b11 {
+  top: 19px;
+  left: 155px;
+}
+.button11,
+.vector-icon3 {
+  position: absolute;
+  overflow: hidden;
+}
+.vector-icon3 {
+  height: 76.35%;
+  width: 97.58%;
+  top: 11.62%;
+  right: 0.98%;
+  bottom: 12.03%;
+  left: 1.45%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.button11 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 19px;
+  left: 16px;
+  width: 37px;
+  height: 37px;
+}
+.header {
+  top: 0;
+  left: 0;
+  width: 362px;
+  height: 72px;
+  text-align: center;
+  font-size: var(--font-size-9xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.div10,
+.header,
+.icon7 {
+  position: absolute;
+}
+.icon7 {
+  top: 278px;
+  left: 246px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+}
+.div10 {
+  top: 72px;
+  left: 0;
+  background-color: var(--color-gray-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 362px;
+  height: 568px;
+}
+.nav {
+  top: 0;
+  left: 2px;
+  background-color: var(--color-white);
+  width: 255px;
+  height: 568px;
+}
+.b12,
+.child5,
+.nav {
+  position: absolute;
+}
+.child5 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 255px;
+  height: 72px;
+}
+.b12 {
+  top: 19px;
+  left: 49px;
+  font-size: var(--font-size-9xl);
+  display: inline-block;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+  width: 157px;
+  height: 35px;
+}
+.button12 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 73px;
+  left: 2px;
+  width: 255px;
+  height: 72px;
+}
+.b13,
+.button12,
+.child6 {
+  position: absolute;
+}
+.child6 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 257px;
+  height: 72px;
+}
+.b13 {
+  top: 19px;
+  left: 39px;
+  font-size: var(--font-size-9xl);
+  display: inline-block;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+  width: 181px;
+  height: 40px;
+}
+.button13,
+.button14,
+.button15 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 145px;
+  left: 0;
+  width: 257px;
+  height: 72px;
+}
+.button14,
+.button15 {
+  top: 217px;
+}
+.button15 {
+  top: 0;
+}
+.line-icon,
+.line-icon1,
+.line-icon2,
+.line-icon3,
+.line-icon4 {
+  position: absolute;
+  top: 143px;
+  left: 2px;
+  width: 255.01px;
+  height: 3.01px;
+}
+.line-icon1,
+.line-icon2,
+.line-icon3,
+.line-icon4 {
+  top: 216px;
+}
+.line-icon2,
+.line-icon3,
+.line-icon4 {
+  top: 72px;
+}
+.line-icon3,
+.line-icon4 {
+  top: 0;
+}
+.line-icon4 {
+  top: 283px;
+  width: 256.01px;
+}
+.icon8 {
+  top: -2px;
+  left: -2px;
+  border-radius: var(--br-11xl);
+  width: 209px;
+  height: 68px;
+}
+.b16,
+.button16,
+.icon8 {
+  position: absolute;
+}
+.b16 {
+  top: 11px;
+  left: 48px;
+  font-size: var(--font-size-9xl);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: center;
+}
+.button16 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 478px;
+  left: 27px;
+  width: 205px;
+  height: 64px;
+}
+.div11 {
+  position: absolute;
+  top: 72px;
+  left: -2px;
+  width: 258px;
+  height: 568px;
+}
+.menu- {
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Menu2.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="menu-2">
+      <img class="icon12" alt="" src="./public/3@2x.png" />
+
+      <img
+        class="voice-navigation-icon3"
+        alt=""
+        src="./public/voice-navigation2.svg"
+      />
+
+      <div class="div15">
+        <div class="child14"></div>
+        <b class="b23">메뉴</b>
+        <button class="button23">
+          <img class="vector-icon5" alt="" src="./public/vector4.svg" />
+        </button>
+      </div>
+      <img class="icon13" alt="" src="./public/6.svg" />
+
+      <div class="div16"></div>
+      <nav class="nav2">
+        <nav class="nav3"></nav>
+        <button class="button24" id="button1">
+          <div class="child15"></div>
+          <b class="b24">현재 위치</b>
+        </button>
+        <button class="button25" id="button2">
+          <div class="child16"></div>
+          <b class="b25">근처 음식점</b>
+        </button>
+        <button class="button26" id="button3">
+          <div class="child17"></div>
+          <b class="b26">음식점 필터</b>
+        </button>
+        <button class="button27" id="button4">
+          <div class="child17"></div>
+          <b class="b26">시작 페이지</b>
+        </button>
+        <img class="line-icon10" alt="" src="./public/line3.svg" />
+
+        <img class="line-icon11" alt="" src="./public/line.svg" />
+
+        <img class="line-icon12" alt="" src="./public/line.svg" />
+
+        <img class="line-icon13" alt="" src="./public/line3.svg" />
+
+        <img class="line-icon14" alt="" src="./public/line4.svg" />
+
+        <button class="button28" id="button5">
+          <img class="icon14" alt="" src="./public/.svg" />
+
+          <b class="b28">사용 방법</b>
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./HomeMap.html";
+        });
+      }
+      
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+          window.location.href = "./Component2.html";
+        });
+      }
+      
+      var button3 = document.getElementById("button3");
+      if (button3) {
+        button3.addEventListener("click", function (e) {
+          window.location.href = "./Component5.html";
+        });
+      }
+      
+      var button4 = document.getElementById("button4");
+      if (button4) {
+        button4.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      
+      var button5 = document.getElementById("button5");
+      if (button5) {
+        button5.addEventListener("click", function (e) {
+          window.location.href = "./Component1.html";
+        });
+      }
+      </script>
+  </body>
+</html>

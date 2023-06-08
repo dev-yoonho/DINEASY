@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Component.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div1">
+      <div class="div2"></div>
+      <div class="div3">
+        <div class="item"></div>
+        <b class="b3">시작 가이드</b>
+        <button class="button3" id="button">
+          <img class="vector-icon1" alt="" src="./public/vector1.svg" />
+        </button>
+      </div>
+      <div class="div4">
+        <div class="div5">
+          <p class="p">
+            <b>
+              <span>다인이지란</span>
+            </b>
+          </p>
+          <p class="p1">
+            <b>
+              <span> </span>
+            </b>
+          </p>
+          <p class="p2">
+            <span>
+              <span>다인이지는 음성기반 </span>
+            </span>
+          </p>
+          <p class="p">
+            <span>
+              <span>길 안내 서비스입니다.</span>
+              <span class="span"> </span>
+            </span>
+          </p>
+        </div>
+        <div class="div6">
+          <p class="p4">
+            <b>
+              <span>주요 기능</span>
+            </b>
+          </p>
+          <p class="p5">
+            <span>
+              <b>
+                <span> </span>
+              </b>
+            </span>
+          </p>
+          <p class="p">
+            <span>
+              <span>크게 3가지 기능이 있습니다.</span>
+            </span>
+          </p>
+          <ul class="ul">
+            <li class="li">
+              <span>
+                <span>현재 위치 찾기</span>
+              </span>
+            </li>
+            <li class="li">
+              <span>
+                <span>근처 음식점 탐색하기</span>
+              </span>
+            </li>
+            <li>
+              <span>
+                <span>길 안내하기</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="div7">
+          <p class="p7">
+            <b>
+              <span>음성 안내 사용법</span>
+            </b>
+          </p>
+          <p class="p1">
+            <b>
+              <span> </span>
+            </b>
+          </p>
+          <p class="p">언제든지 앱 하단의 마이크</p>
+          <p class="p">버튼을 눌러 음성 명령을 할</p>
+          <p class="p">수 있습니다. 또, 마이크 옆</p>
+          <p class="p">스피커 버튼으로 언제든 현재</p>
+          <p class="p">페이지 내용에 관해 다시 안내</p>
+          <p class="p">받을 수 있습니다.</p>
+        </div>
+      </div>
+      <button class="button4" id="button1">
+        <img class="icon4" alt="" src="./public/-.svg" />
+
+        <b class="b4">시작하기</b>
+      </button>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./HomeMap.html";
+        });
+      }
+      </script>
+  </body>
+</html>

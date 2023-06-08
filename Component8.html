@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./Component8.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div38">
+      <div class="div39">
+        <img class="icon22" alt="" src="./public/--icon2.svg" />
+
+        <b class="b49">오른쪽으로 돌아주세요</b>
+      </div>
+      <div class="div40">
+        <b class="b50">길 안내</b>
+        <button class="button46">
+          <img class="vector-icon16" alt="" src="./public/vector5.svg" />
+        </button>
+      </div>
+      <div class="div39">
+        <img class="icon22" alt="" src="./public/--icon2.svg" />
+
+        <b class="b49">오른쪽으로 돌아주세요</b>
+      </div>
+      <div class="voice-navigation7">
+        <button class="mic-icon13" id="micIcon">
+          <img class="mic-icon14" alt="" src="./public/mic4.svg" />
+        </button>
+        <button class="speaker-icon13" id="speakerIcon">
+          <img class="speaker-icon14" alt="" src="./public/speaker1.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var micIcon = document.getElementById("micIcon");
+      if (micIcon) {
+        micIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component4.html";
+        });
+      }
+      
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      </script>
+  </body>
+</html>

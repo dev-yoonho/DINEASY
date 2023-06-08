@@ -1,0 +1,83 @@
+.icon {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xl);
+  width: 205px;
+  height: 64px;
+}
+.b,
+.button,
+.icon {
+  position: absolute;
+}
+.b {
+  top: 11px;
+  left: 50px;
+  font-size: var(--font-size-9xl);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: center;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 205px;
+  height: 64px;
+}
+.icon1 {
+  top: -2px;
+  left: -2px;
+  border-radius: var(--br-11xl);
+  width: 209px;
+  height: 68px;
+}
+.b1,
+.button1,
+.icon1 {
+  position: absolute;
+}
+.b1 {
+  top: 11px;
+  left: 48px;
+  font-size: var(--font-size-9xl);
+  font-family: var(--font-poppins);
+  color: var(--color-black);
+  text-align: center;
+}
+.button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 85px;
+  left: 0;
+  width: 205px;
+  height: 64px;
+}
+.dineasy-icon,
+.navi {
+  position: absolute;
+  top: 414px;
+  left: 79px;
+  width: 205px;
+  height: 149px;
+}
+.dineasy-icon {
+  top: 111px;
+  left: 41px;
+  width: 280px;
+  height: 251px;
+  object-fit: cover;
+}
+.landing-page {
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-lavenderblush);
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+}
