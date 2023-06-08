@@ -209,9 +209,7 @@ function drawLine(arrPoint) {
   resultdrawArr.push(polyline_);
 }
 
-let coordinatesAndDescriptions = [
-  [37.5605672, 126.9433486, "현재 위치"]
-];
+let coordinatesAndDescriptions = [];
 console.log("실행됨 0")
 let printedDescriptions = new Set();
 
@@ -224,8 +222,11 @@ function success(position) {
 
   var locPosition = new Tmapv2.LatLng(lat, lon);
 
+
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
     console.log("실행됨 3")
+    console.log(coordinatesAndDescriptions[0][1])
+    console.log(lat)
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 10 && !printedDescriptions.has(description)) {
         console.log("실행됨 4")  
         console.log(description);
