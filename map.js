@@ -261,15 +261,16 @@ var currentCoords = coordsParts.map(function (part) {
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
-function removeSquareBrackets(address) {
-  return address.replace(/\[|\]/g, '');
+function removeQuotesAndBrackets(sentence) {
+  const regex = /['"()\[\]]/g;
+  return sentence.replace(regex, '');
 }
 
-const addressWithBrackets = `'${restaurantCoordsParts}'`;
-const addressWithoutBrackets = removeSquareBrackets(addressWithBrackets);
+const address = '["391-12 Hapjeong-dong, Mapo-gu, Seoul"]';
+const result_addr = removeQuotesAndBrackets(address);
 
 var restaurantcoordinates=[];
-AddressToCoordinates(addressWithoutBrackets);
+AddressToCoordinates(result_addr);
 
 function AddressToCoordinates(address) {
   var headers = {};
