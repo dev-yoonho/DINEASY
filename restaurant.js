@@ -1,5 +1,5 @@
 var category = window.localStorage.getItem('category');
-let locat = window.localStorage.getItem('location');
+let locat = '신촌동' //window.localStorage.getItem('location');
 
 function changeCategory(value) {
     let result = value;
@@ -34,8 +34,10 @@ let restList = [];
     restaurants = await getRestaurants();
     if (!category) {
         locationRest();
+        speech(locat + "에 위치한 식당 리스트입니다.");
     } else {
         categoryRest();
+        speech(category + " 카테고리에 해당하는 식당 리스트입니다");
     }
 })()
 

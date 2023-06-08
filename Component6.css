@@ -160,24 +160,26 @@
   width: 283px;
 }
 .mic-icon10,
-.speaker-icon10 {
+.speaker-icon2,
+.speaker-icon3 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 112px;
-  height: 112px;
-  cursor: pointer;
-}
-.speaker-icon10 {
-  top: 16px;
-  left: 134px;
   width: 79px;
   height: 79px;
 }
-.voice-navigation5 {
+.speaker-icon2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 16px;
+  left: 134px;
+}
+.voice-navigation {
   position: absolute;
-  top: 512px;
-  left: 138px;
+  top: 513px;
+  left: 133px;
   width: 213px;
   height: 112px;
 }

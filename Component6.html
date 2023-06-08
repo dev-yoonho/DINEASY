@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--식당 정보를 노출하는 페이지입니다-->
 <html>
@@ -14,6 +16,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
     />
+    <script src="./sayThis.js"></script>
   </head>
   <body>
     <div class="div32">
@@ -44,38 +47,34 @@
           <img class="vector-icon14" alt="" src="./public/vector9.svg" />
         </button>
       </div>
-      <div class="voice-navigation5">
-        
-
-        <img
-          class="speaker-icon10"
-          alt=""
-          src="./public/speaker4.svg"
-          id="speakerIcon"
-        />
+      <div class="voice-navigation">
+        <button class="speaker-icon2" id="speakerIcon" onclick="speech0()">
+          <img class="speaker-icon3" alt="" src="./public/speaker1.svg" />
+        </button>
       </div>
     </div>
 
     <script>
       
-      var speakerIcon = document.getElementById("speakerIcon");
-      if (speakerIcon) {
-        speakerIcon.addEventListener("click", function (e) {
-          window.location.href = "./Component3.html";
-        });
-      }
 
       console.log(window.localStorage.getItem('selectedRestaurant'));
       var rest = JSON.parse(window.localStorage.getItem('selectedRestaurant'));
 
       document.querySelector('.b45').innerText = rest[0];
-      document.querySelector('.m6').innerText = '종류: ' + rest[1] + '\n' + '주소: ' + rest[2];
+      var restInfo= '종류: ' + rest[1] + '\n' + '주소: ' + rest[2];
+      document.querySelector('.m6').innerText = restInfo
 
       img = document.querySelector('#restImg');
       img.src = `./restImg/${rest[0]}.png`;
       img.addEventListener("error", ()=> {
             img.src = './restImg/init.png';
         });
+
+      function speech0() {
+        speech(rest[0]);
+        speech(restInfo + "길안내를 시작하려면 오른쪽 상단 안내 시작 버튼을 눌러주세요.");
+      }
+      
 
       </script>
   </body>

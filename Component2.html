@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
     />
     <script src="./restaurant.js"></script>
+    <script src="./sayThis.js"></script>
   </head>
 
   <body>
@@ -36,8 +37,8 @@
       </div>
 
       <div class="gradient"></div>
-      <div class="voice-navigation1">
-        <button class="speaker-icon2" id="speakerIcon">
+      <div class="voice-navigation">
+        <button class="speaker-icon2" id="speakerIcon" onclick="sayAgain()">
           <img class="speaker-icon3" alt="" src="./public/speaker1.svg" />
         </button>
       </div>
@@ -48,13 +49,6 @@
       if (button) {
         button.addEventListener("click", function (e) {
           window.location.href = "./Menu2.html";
-        });
-      }
-      
-      var speakerIcon = document.getElementById("speakerIcon");
-      if (speakerIcon) {
-        speakerIcon.addEventListener("click", function (e) {
-          window.location.href = "./Component3.html";
         });
       }
       </script>
