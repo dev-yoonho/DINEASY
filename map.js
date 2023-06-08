@@ -67,8 +67,8 @@ function initTmap() {
     data: {
       startX: currentCoords[1],
       startY: currentCoords[0],
-      endX: 126.936130,
-      endY: 37.559419,
+      endX: restaurantCoordinates[1],
+      endY: restaurantCoordinates[0],
       reqCoordType: "WGS84GEO",
       resCoordType: "EPSG3857",
       startName: "출발지",
@@ -261,8 +261,8 @@ var currentCoords = coordsParts.map(function (part) {
 var selectedRestaurant = window.localStorage.getItem("selectedRestaurant");
 var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
-console.log("전체 주소 :"+restaurantCoordsParts);
-
+AddressToCoordinates("서울특별시 마포구 합정동 391-12");
+var restaurantCoordinates=[];
 function AddressToCoordinates(address) {
   var headers = {};
   headers["appKey"] = "KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW";
@@ -288,7 +288,7 @@ function AddressToCoordinates(address) {
         );
         var restaurantLat = response.coordinateInfo.coordinate[0].lat;
         var restaurantLon = response.coordinateInfo.coordinate[0].lon;
-        var restaurantCoordinates = [restaurantLat, restaurantLon];
+        restaurantCoordinates = [restaurantLat, restaurantLon];
       } else {
         console.log(
           `목적지 신주소 x좌표:` + response.coordinateInfo.coordinate[0].newLat
@@ -298,7 +298,7 @@ function AddressToCoordinates(address) {
         );
         var restaurantLat = response.coordinateInfo.coordinate[0].newLat;
         var restaurantLon = response.coordinateInfo.coordinate[0].newLon;
-        var restaurantCoordinates = [restaurantLat, restaurantLon];
+        restaurantCoordinates = [restaurantLat, restaurantLon];
       }
 
       // 3.마커 찍기
