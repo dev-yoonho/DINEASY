@@ -49,8 +49,9 @@
       console.log("The first keyword is: "+firstKeyword);
       category = firstKeyword;
       handleCategoryChange(category);
-      goNext("Component2.html");
-
+      if (firstKeyword!=undefined){
+        goNext("Component2.html");
+      };
     });
   };
 
