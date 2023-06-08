@@ -7,12 +7,12 @@
     <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW"></script>
     <script src="map.js"></script>
     <script src="sayThis.js"></script>
+    <script src="coordSpeech.js"></script>
     <script>
       AddressToCoordinates(restaurantCoordsParts);
     </script>
   </head>
-  <body onload="initTmap();getRoad();">
-    
+  <body onload="initTmap();getRoad()">
     <!-- 맵 생성 실행 -->
     <div id="map_div"></div>
     <div id="textOutput"></div>
@@ -29,13 +29,13 @@
             "content-type": "application/json",
           },
           body: JSON.stringify({
-            startX: 126.936879,
-            startY: 37.555298,
+            startX: currentCoords[1],
+            startY: currentCoords[0],
             angle: 20,
             speed: 5,
             endPoiId: "10001",
-            endX: 126.936978,
-            endY: 37.559779,
+            endX: restaurantcoordinates[1],
+            endY: restaurantcoordinates[0],
             reqCoordType: "WGS84GEO",
             startName: "%EC%B6%9C%EB%B0%9C",
             endName: "%EB%8F%84%EC%B0%A9",
@@ -61,8 +61,8 @@
                 feature.type === "Feature" &&
                 feature.geometry.type === "Point"
               ) {
-                const coordinates = feature.geometry.coordinates;
-                const description = feature.properties.description;
+                var coordinates = feature.geometry.coordinates;
+                var description = feature.properties.description;
                 console.log("Coordinates:", coordinates);
                 console.log("Description:", description);
                 var tempBox = [coordinates[1], coordinates[0], description];
