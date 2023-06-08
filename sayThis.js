@@ -44,55 +44,48 @@ function sayAgain(){
       }
 }
 
+
 function speech(txt) {
-  lastTxt = txt;  
+  lastTxt=txt;  
   localStorage.setItem('lastTxt', lastTxt);
-  
-  if (!window.speechSynthesis) {
+  if(!window.speechSynthesis) {
     alert("음성 재생을 지원하지 않는 브라우저입니다. 크롬, 파이어폭스 등의 최신 브라우저를 이용하세요");
     return;
   }
-  
   var lang = 'ko-KR';
-  var words = txt.split(' '); // 띄어쓰기를 기준으로 단어 분리
-  
-  var playWord = function(index) {
-    if (index >= words.length) {
-      return;
-    }
-    
-    var utterThis = new SpeechSynthesisUtterance(words[index]);
-    utterThis.onend = function (event) {
-      console.log('end');
-      setTimeout(function() {
-        playWord(index + 1); // 다음 단어 재생
-      }, 500); // 0.5초의 일시 정지 후 다음 단어 재생
-    };
-    utterThis.onerror = function(event) {
-      console.log('error', event);
-      setTimeout(function() {
-        playWord(index + 1); // 다음 단어 재생
-      }, 500); // 0.5초의 일시 정지 후 다음 단어 재생
-    
-    var voiceFound = false;
-    for (var i = 0; i < voices.length; i++) {
-      if (voices[i].lang.indexOf(lang) >= 0 || voices[i].lang.indexOf(lang.replace('-', '_')) >= 0) {
-        utterThis.voice = voices[i];
-        voiceFound = true;
-      }
-    }
-    
-    if (!voiceFound) {
-      alert('voice not found');
-      return;
-    }
-    
-    utterThis.lang = lang;
-    utterThis.pitch = 1;
-    utterThis.rate = 1;
-    
-    window.speechSynthesis.speak(utterThis);
+  var utterThis = new SpeechSynthesisUtterance(txt);
+  utterThis.onend = function (event) {
+    console.log('end');
   };
-  
-  playWord(0); // 첫 번째 단어 재생
-}};
+  utterThis.onerror = function(event) {
+    console.log('error', event);
+  };
+  var voiceFound = false;
+  for(var i = 0; i < voices.length ; i++) {
+    if(voices[i].lang.indexOf(lang) >= 0 || voices[i].lang.indexOf(lang.replace('-', '_')) >= 0) {
+      utterThis.voice = voices[i];
+      voiceFound = true;
+    }
+  }
+  if(!voiceFound) {
+    alert('voice not found');
+    return;
+  }
+  utterThis.lang = lang;
+  utterThis.pitch = 1;
+  utterThis.rate = 1;  //속도
+  window.speechSynthesis.speak(utterThis);
+}
+
+if ("geolocation" in navigator) {
+  // Request permission and start watching position
+  var watchID = navigator.geolocation.watchPosition(function(position) {
+  }, function(error) {
+    console.log("Error occurred: " + error.message);
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+
+
+
