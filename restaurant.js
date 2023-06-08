@@ -1,5 +1,5 @@
 var category = window.localStorage.getItem('category');
-let locat = '신촌동' //window.localStorage.getItem('location');
+let locat = window.localStorage.getItem('location');
 
 function changeCategory(value) {
     let result = value;
