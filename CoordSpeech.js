@@ -20,6 +20,17 @@ function success(position) {
       }
   });
 }
+let options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function error(err) {
+  console.warn(`여기서 에러(${err.code}): ${err.message}`);
+};
+
+navigator.geolocation.watchPosition(success, error, options);
 
 navigator.geolocation.watchPosition(success, error, options);
 
