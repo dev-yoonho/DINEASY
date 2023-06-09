@@ -1,5 +1,5 @@
 var category = window.localStorage.getItem('category');
-var userlocat = "서울특별시 서대문구 창천동" //window.localStorage.getItem('userLocation');
+var userlocat = window.localStorage.getItem('userLocation');
 
 function changeCategory(value) {
     let result = value;
