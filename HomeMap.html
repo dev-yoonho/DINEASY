@@ -13,10 +13,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
     />
+    <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW"></script>
+    <script src="HomeMap.js"></script>
   </head>
-  <body>
+  <body onload="initTmap();remove()">
     <div class="home-map">
-      <img class="icon2" alt="" src="./public/1@2x.png" />
+      <div id="map_div"></div>
 
       <img
         class="voice-navigation-icon"
@@ -32,7 +34,6 @@
           <img class="speaker-icon1" alt="" src="./public/speaker.svg" />
         </button>
       </div>
-      <img class="icon3" alt="" src="./public/2.svg" />
 
       <div class="div">
         <div class="child"></div>
@@ -50,20 +51,20 @@
           window.location.href = "./Component4.html";
         });
       }
-      
+
       var speakerIcon = document.getElementById("speakerIcon");
       if (speakerIcon) {
         speakerIcon.addEventListener("click", function (e) {
           window.location.href = "./Component3.html";
         });
       }
-      
+
       var button = document.getElementById("button");
       if (button) {
         button.addEventListener("click", function (e) {
           window.location.href = "./Menu3.html";
         });
       }
-      </script>
+    </script>
   </body>
 </html>
