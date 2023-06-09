@@ -1,4 +1,47 @@
 var map;
+var homeMapCurrentCoords;
+let homeMapCoordsPartslon;
+let homeMapCoordsPartslat;
+var jibunAddr;
+var homeMapCoordsParts = [];
+var lat;
+var lon;
+const success = (position) => {
+  console.log(position);
+  (lat = position.coords.latitude); // 위도
+  (lon = position.coords.longitude); // 경도
+  homeMapCoordsParts = [lat,lon]
+  console.log('p')
+
+  var locPosition = new Tmapv2.LatLng(lat, lon);
+
+  // 마커와 인포윈도우를 표시
+  displayMaker(locPosition);
+}
+const error = (err) => {
+  console.log(err); // 상수선언을 하는것이 표현적으로 나아보임.
+}
+if (navigator.geolocation) {
+  var na = navigator.geolocation.watchPosition(success, error, options);
+  console.log(na);
+}
+  homeMapCurrentCoords = `${lat}, ${lon}`;
+  homeMapCoordsParts = homeMapCurrentCoords.split(",");
+// 변수 선언 후 값 할당
+homeMapCoordsPartslon = parseFloat(homeMapCoordsParts[1]);
+homeMapCoordsPartslat = parseFloat(homeMapCoordsParts[0]);
+console.log(homeMapCoordsPartslon);
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0,
+};
+var marker;
+var flag = false;
+remove();
+
+
 
 // 페이지가 로딩이 된 후 호출하는 함수입니다.
 function initTmap() {
@@ -18,15 +61,6 @@ function initTmap() {
     map: map, //Marker가 표시될 Map 설정..
   });
 }
-
-var homeMapCurrentCoords;
-let homeMapCoordsPartslon;
-let homeMapCoordsPartslat;
-var jibunAddr;
-
-// 변수 선언 후 값 할당
-homeMapCoordsPartslon = parseFloat(homeMapCoordsParts[1]);
-homeMapCoordsPartslat = parseFloat(homeMapCoordsParts[0]);
 
 function reverseGeo(lon, lat) {
   var headers = {};
@@ -122,37 +156,12 @@ function reverseGeo(lon, lat) {
   });
 }
 ///////////////
-var homeMapCoordsParts = [];
-var lat;
-var lon;
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0,
-};
-function success(position) {
-  console.log(position);
-  (lat = position.coords.latitude), // 위도
-    (lon = position.coords.longitude); // 경도
 
-  homeMapCurrentCoords = `${lat}, ${lon}`;
-  homeMapCoordsParts = homeMapCurrentCoords.split(",");
 
-  var locPosition = new Tmapv2.LatLng(lat, lon);
 
-  // 마커와 인포윈도우를 표시
-  displayMaker(locPosition);
-}
-function error(err) {
-  console.log(err);
-}
-if (navigator.geolocation) {
-  var na = navigator.geolocation.watchPosition(success, error, options);
-  console.log(na);
-}
+
 // 마커 생성기
-var marker;
-var flag = false;
+
 
 function displayMaker(locPosition) {
   console.log(1);
@@ -169,9 +178,11 @@ function displayMaker(locPosition) {
   map.setCenter(locPosition);
 }
 
-remove();
+
 function remove() {
   map.setOptions({ zoomControl: false }); // 지도 옵션 줌컨트롤 표출 비활성화
+  // > tMAP2에 setOptions 메소드가 있는지 확인할것.
 }
 
-console.log(homeMapCoordsPartslon);
+
+
