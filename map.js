@@ -234,7 +234,7 @@ function success(position) {
           speech(description);
           printedDescriptions.add(description);
 	  if (nowDescription.toString()=="도착"){
-	      goNext("Component7");
+	      goNext("Component7.html");
 	  };	  
 	  
       }
