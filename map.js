@@ -209,11 +209,11 @@ function drawLine(arrPoint) {
   resultdrawArr.push(polyline_);
 }
 var coordinatesAndDescriptions = JSON.parse(localStorage.getItem('coordinatesAndDescriptions'));
-console.log("실행됨 0")
+console.log("실행됨 0:"+coordinatesAndDescriptions)
 let printedDescriptions = new Set();
 
 function success(position) {
-  console.log(position);
+  console.log("실행됨 1: "+position);
   (lat = position.coords.latitude), // 위도
     (lon = position.coords.longitude); // 경도
 
