@@ -42,40 +42,29 @@
           }),
         };
 
-        var coordinatesAndDescriptions = [];
-
         fetch(
           "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&callback=function",
           options
         )
           .then((response) => response.json())
           .then((response) => {
-            console.log(response);
-            var coordinatesAndDescriptions = [];
-            for (var i = 0; i < response.features.length; i++) {
-              var feature = response.features[i];
-              if (
-                feature.type === "Feature" &&
-                feature.geometry.type === "Point"
-              ) {
-                var coordinates = feature.geometry.coordinates;
-                var description = feature.properties.description;
-                console.log("Coordinates:", coordinates);
-                console.log("Description:", description);
-                var tempBox = [coordinates[1], coordinates[0], description];
-                coordinatesAndDescriptions.push(tempBox);
-              }
-            }
-            console.log(
-              "coordinatesAndDescriptions[0][1]:",
-              coordinatesAndDescriptions[0][1]
-            );
-            console.log(
-              "coordinatesAndDescriptions[3][2]:",
-              coordinatesAndDescriptions[3][2]
-            );
-          });
-      }
+            coordinatesAndDescriptions = [];
+        for (var i = 0; i < response.features.length; i++) {
+          var feature = response.features[i];
+          if (
+            feature.type === "Feature" &&
+            feature.geometry.type === "Point"
+          ) {
+            var coordinates = feature.geometry.coordinates;
+            var description = feature.properties.description;
+            var tempBox = [coordinates[1], coordinates[0], description];
+            coordinatesAndDescriptions.push(tempBox);
+          }
+        }
+        // fetch 요청이 완료되면 localStorage에 저장
+        localStorage.setItem('coordinatesAndDescriptions', JSON.stringify(coordinatesAndDescriptions));
+      });
+    }
     </script>
         <script src="map.js"></script>
     <script src="sayThis.js"></script>
