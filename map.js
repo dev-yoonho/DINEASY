@@ -231,7 +231,7 @@ function success(position) {
         console.log("실행됨 4"+description);
 	var nowDescription=description;
 	if (coordinatesAndDescriptions[0][2].toString()==nowDescription.toString){
-	 console.log("")
+	 console.log("테스트 성공")
 	}
 
 	 var outputDiv = document.getElementById('textOutput'); 
