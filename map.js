@@ -225,6 +225,8 @@ function success(position) {
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 20 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
+	   var outputDiv = document.getElementById('textOutput'); 
+           outputDiv.textContent = description; 
           speech(description);
           printedDescriptions.add(description);
       }
