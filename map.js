@@ -228,16 +228,12 @@ function success(position) {
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
 	var nowDescription=description;
-	if (nowDescription.toString()=="도착"){
-	 console.log("테스트 성공")
-	}
-
 	 var outputDiv = document.getElementById('textOutput'); 
            outputDiv.textContent = description;
 	   console.log(nowDescription);
           speech(description);
           printedDescriptions.add(description);
-	  if (lastDescription.toString()==nowDescription().toString){
+	  if (nowDescription.toString()=="도착"){
 	      goNext("Component7")
 	  };	  
 	  
