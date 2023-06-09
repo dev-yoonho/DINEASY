@@ -5,15 +5,11 @@
     <title>simpleMap</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW"></script>
-    <script>
-      AddressToCoordinates(restaurantCoordsParts);
-    </script>
   </head>
   <body onload="initTmap();getRoad()">
     <!-- 맵 생성 실행 -->
     <div id="textOutput"></div>
     <div id="map_div"></div>
-    <div id="textOutput"></div>
     <!-- 말하기 버튼 -->
     <button id="btn" type="button" onclick="sayAgain()">다시말하기</button>
     <!-- coordinatesAndDescriptions 배열 불러오기 -->
