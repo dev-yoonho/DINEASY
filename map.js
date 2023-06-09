@@ -209,8 +209,6 @@ function drawLine(arrPoint) {
   resultdrawArr.push(polyline_);
 }
 var coordinatesAndDescriptions = JSON.parse(localStorage.getItem('coordinatesAndDescriptions'));
-var lastDescription=coordinatesAndDescriptions[coordinatesAndDescriptions.length -1][2]
-console.log(lastDescription);
 
 console.log("실행됨 0:"+coordinatesAndDescriptions)
 let printedDescriptions = new Set();
@@ -230,7 +228,7 @@ function success(position) {
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
 	var nowDescription=description;
-	if (coordinatesAndDescriptions[0][2].toString()==nowDescription.toString){
+	if (nowDescription.toString()=="도착"){
 	 console.log("테스트 성공")
 	}
 
