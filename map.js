@@ -223,7 +223,7 @@ function success(position) {
 
 
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
-      if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 10 && !printedDescriptions.has(description)) {  
+      if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 20 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
           speech(description);
           printedDescriptions.add(description);
