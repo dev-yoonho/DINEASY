@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>simpleMap</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./HomeMap.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
   </head>
-  <body onload="initTmap();getRoad()">
-    <!-- 맵 생성 실행 -->
-    <div id="textOutput"></div>
-    <div id="map_div"></div>
-    <!-- 말하기 버튼 -->
-    <button id="btn" type="button" onclick="sayAgain()">다시말하기</button>
-    <!-- coordinatesAndDescriptions 배열 불러오기 -->
+  <body>
+    <div class="home-map1">
+      <img class="icon23" alt="" src="./public/11@2x.png" />
+
+      <img class="voice-navigation-icon4" alt="" src="./public/speaker1.svg" />
+
+      <div class="voice-navigation-icon4">
+        <button class="speaker-icon10">
+          <img class="speaker-icon11" alt="" src="./public/speaker1.svg" />
+        </button>
+      </div>
+      <img class="icon24" alt="" src="./public/8.svg" />
+
+      <div class="div34">
+        <div class="child31"></div>
+        <b class="b48">길 안내</b>
+        <button class="button46" id="button">
+          <img class="vector-icon21" alt="" src="./public/vector5.svg" />
+        </button>
+      </div>
+      <div class="home-map-child"></div>
+      <div id="textOutput", class="m8"></div>
+      <div id="map_div"></div>
+    </div>
     <script>
       var coordinatesAndDescriptions = []; // 전역 범위에서 정의
 
@@ -65,8 +93,18 @@
       });
     }
     </script>
-        <script src="map.js"></script>
-    <script src="sayThis.js"></script>
-    <script src="coordSpeech.js"></script>
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu3.html";
+        });
+      }
+      </script>
+
+
+<script src="map.js"></script>
+<script src="sayThis.js"></script>
+<script src="coordSpeech.js"></script>
   </body>
 </html>
