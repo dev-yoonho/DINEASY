@@ -7,15 +7,14 @@
     rgba(217, 217, 217, 0),
     rgba(0, 0, 0, 0.59)
   );
-  width: 380px;
+  width: 362px;
   height: 139px;
 }
 
 .resList {
   position: absolute;
   top: 72px;
-  left: 25px;
-  width: 370px;
+  width: 362px;
   height: 568px;
   overflow-y: auto;
 }
@@ -46,8 +45,12 @@
 .restaurantName {
   font-size: 25px;
   font-family: var(--font-inter);
+  width: 300px;
   color: black;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .restaurantInfo {
@@ -258,12 +261,11 @@
 .div20 {
   position: relative;
   border-radius: var(--br-11xl);
-  background-color: var(--color-white);
-  width: 100%;
+  width: 362px;
   height: 640px;
   overflow: hidden;
   text-align: center;
   font-size: var(--font-size-9xl);
-  color: var(--color-black);
+  color: black;
   font-family: var(--font-inter);
 }

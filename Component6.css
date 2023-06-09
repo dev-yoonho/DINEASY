@@ -1,5 +1,4 @@
 #restImg {
-  position: absolute;
   top: 0;
   left: 0;
   border-radius: var(--br-11xl);
@@ -9,33 +8,30 @@
 }
 
 .b45 {
-  position: absolute;
-}
-
-.b45 {
-  top: 230px;
-  left: 10px;
+  position: relative;
+  text-align: center;
+  width: 320px;
+  line-height: 0.5;
 }
 .p28 {
   margin: 0;
 }
 .m6 {
-  position: absolute;
-  top: 260px;
-  left: 10px;
+  left: 20px;
   font-size: 24px;
   text-align: left;
   width: 220px;
+  margin-top: 10px;
 }
 
-.b46,
-.div34{
+.b46{
   position: absolute;
 }
 .div34 {
+  position: relative;
   top: 192px;
-  left: 42px;
-  width: 279px;
+  left: 30px;
+  width: 310px;
   height: 391px;
 }
 .b46 {
@@ -159,7 +155,7 @@
   left: 46px;
   width: 283px;
 }
-.mic-icon10,
+
 .speaker-icon2,
 .speaker-icon3 {
   position: absolute;
