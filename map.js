@@ -281,7 +281,6 @@ function removeQuotesAndBrackets(sentence) {
 }
 
 var result_addr = removeQuotesAndBrackets(restaurantCoordsParts);
-localStorage.setItem("userLocation",result_addr)
 var restaurantcoordinates=[];
 AddressToCoordinates(result_addr);
 
