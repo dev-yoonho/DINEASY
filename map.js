@@ -208,8 +208,7 @@ function drawLine(arrPoint) {
   });
   resultdrawArr.push(polyline_);
 }
-
-let coordinatesAndDescriptions = [];
+var coordinatesAndDescriptions = JSON.parse(localStorage.getItem('coordinatesAndDescriptions'));
 console.log("실행됨 0")
 let printedDescriptions = new Set();
 
@@ -224,12 +223,10 @@ function success(position) {
 
 
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
-    console.log("실행됨 3")
-    console.log(coordinatesAndDescriptions[0][1])
-    console.log(lat)
-      if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 10 && !printedDescriptions.has(description)) {
-        console.log("실행됨 4")  
-        console.log(description);
+    console.log("실행됨 3 안내문"+coordinatesAndDescriptions[0][2])
+    console.log("실행됨 3 현재 lat:"+lat)
+      if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 10 && !printedDescriptions.has(description)) {  
+        console.log("실행됨 4"+description);
           speech(description);
           printedDescriptions.add(description);
       }
