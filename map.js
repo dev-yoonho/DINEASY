@@ -235,7 +235,7 @@ function success(position) {
 	   console.log(nowDescription);
           speech(description);
           printedDescriptions.add(description);
-	  if (lastDescription==nowDescription){
+	  if (lastDescription.toString==nowDescription.toString){
 	      goNext("Component7")
 	  };	  
 	  
