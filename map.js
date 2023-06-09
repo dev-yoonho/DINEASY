@@ -230,7 +230,7 @@ function success(position) {
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
 	var nowDescription=description;
-	if (coordinatesAndDescriptions[0][2].toString()==nowDescription){
+	if (coordinatesAndDescriptions[0][2].toString()==nowDescription.toString){
 	 console.log("")
 	}
 
