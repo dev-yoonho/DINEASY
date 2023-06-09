@@ -17,6 +17,8 @@
     <button id="btn" type="button" onclick="sayAgain()">다시말하기</button>
     <!-- coordinatesAndDescriptions 배열 불러오기 -->
     <script>
+      var coordinatesAndDescriptions = []; // 전역 범위에서 정의
+
       function getRoad() {
         const options = {
           method: "POST",
