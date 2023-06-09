@@ -1,5 +1,5 @@
 var category = window.localStorage.getItem('category');
-let locat = window.localStorage.getItem('location');
+let locat = window.localStorage.getItem('userLocation');
 
 function changeCategory(value) {
     let result = value;
