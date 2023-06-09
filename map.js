@@ -209,6 +209,9 @@ function drawLine(arrPoint) {
   resultdrawArr.push(polyline_);
 }
 var coordinatesAndDescriptions = JSON.parse(localStorage.getItem('coordinatesAndDescriptions'));
+var lastDescription=coordinatesAndDescriptions[coordinatesAndDescriptions.length -1][2]
+console.log(lastDescription);
+
 console.log("실행됨 0:"+coordinatesAndDescriptions)
 let printedDescriptions = new Set();
 
@@ -221,14 +224,21 @@ function success(position) {
 
   var locPosition = new Tmapv2.LatLng(lat, lon);
 
-
+		
+	
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
       if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 && !printedDescriptions.has(description)) {  
         console.log("실행됨 4"+description);
-	   var outputDiv = document.getElementById('textOutput'); 
-           outputDiv.textContent = description; 
+	var nowDescription=description;
+	 var outputDiv = document.getElementById('textOutput'); 
+           outputDiv.textContent = description;
+	   console.log(nowDescription);
           speech(description);
           printedDescriptions.add(description);
+	  if (lastDescription==nowDescription){
+	      goNext("Component7")
+	  };	  
+	  
       }
   });
 
