@@ -1,5 +1,5 @@
 var category = window.localStorage.getItem('category');
-let locat = window.localStorage.getItem('userLocation');
+var userlocat = window.localStorage.getItem('userLocation');
 
 function changeCategory(value) {
     let result = value;
@@ -27,8 +27,14 @@ function changeCategory2(value) {
     return result;
 }
 
+function getAddress(locat) {
+    let r = locat.split(' ');
+    return r[2];
+  }
+
 let restaurants;
 let restList = [];
+var locat = getAddress(userlocat);
 
 (async () => {
     restaurants = await getRestaurants();
