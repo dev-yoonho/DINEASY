@@ -24,8 +24,8 @@ function initTmap() {
     "map_div", // "map_div" : 지도가 표시될 div의 id
     {
       center: new Tmapv2.LatLng(37.56004728498993, 126.93688499998413), // 지도 초기 좌표
-      width: "100%", // map의 width 설정
-      height: "400px", // map의 height 설정
+      width: "362px", // map의 width 설정
+      height: "640px", // map의 height 설정
       zoom: 17,
     }
   );
@@ -208,13 +208,15 @@ function drawLine(arrPoint) {
   });
   resultdrawArr.push(polyline_);
 }
-var coordinatesAndDescriptions = JSON.parse(localStorage.getItem('coordinatesAndDescriptions'));
+var coordinatesAndDescriptions = JSON.parse(
+  localStorage.getItem("coordinatesAndDescriptions")
+);
 
-console.log("실행됨 0:"+coordinatesAndDescriptions)
+console.log("실행됨 0:" + coordinatesAndDescriptions);
 let printedDescriptions = new Set();
 
 function success(position) {
-  console.log("실행됨 1: "+position);
+  console.log("실행됨 1: " + position);
   (lat = position.coords.latitude), // 위도
     (lon = position.coords.longitude); // 경도
 
@@ -222,22 +224,22 @@ function success(position) {
 
   var locPosition = new Tmapv2.LatLng(lat, lon);
 
-		
-	
   coordinatesAndDescriptions.forEach(([dataLat, dataLon, description]) => {
-      if (getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 && !printedDescriptions.has(description)) {  
-        console.log("실행됨 4"+description);
-	var nowDescription=description;
-	 var outputDiv = document.getElementById('textOutput'); 
-           outputDiv.textContent = description;
-	   console.log(nowDescription);
-          speech(description);
-          printedDescriptions.add(description);
-	  if (nowDescription.toString()=="도착"){
-	      window.location.href="./Component7.html"
-	  };	  
-	  
+    if (
+      getDistanceFromLatLonInKm(dataLat, dataLon, lat, lon) <= 30 &&
+      !printedDescriptions.has(description)
+    ) {
+      console.log("실행됨 4" + description);
+      var nowDescription = description;
+      var outputDiv = document.getElementById("textOutput");
+      outputDiv.textContent = description;
+      console.log(nowDescription);
+      speech(description);
+      printedDescriptions.add(description);
+      if (nowDescription.toString() == "도착") {
+        goNext("Component7");
       }
+    }
   });
 
   // 마커와 인포윈도우를 표시
@@ -285,11 +287,11 @@ var restaurantCoordsParts = selectedRestaurant.split(",")[2];
 
 function removeQuotesAndBrackets(sentence) {
   const regex = /['"()\[\]]/g;
-  return sentence.replace(regex, '');
+  return sentence.replace(regex, "");
 }
 
 var result_addr = removeQuotesAndBrackets(restaurantCoordsParts);
-var restaurantcoordinates=[];
+var restaurantcoordinates = [];
 AddressToCoordinates(result_addr);
 
 function AddressToCoordinates(address) {
@@ -609,27 +611,29 @@ function AddressToCoordinates(address) {
   });
 }
 
-
-
-
-
 // 좌표 거리 계산
 
-
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-  console.log("실행됨 2")
-var R = 6371; // Radius of the earth in km
-var dLat = deg2rad(lat2-lat1);  // deg2rad below
-var dLon = deg2rad(lon2-lon1); 
-var a = 
-  Math.sin(dLat/2) * Math.sin(dLat/2) +
-  Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-  Math.sin(dLon/2) * Math.sin(dLon/2); 
-var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-var d = R * c; // Distance in km
-return d * 1000; // Distance in m
+  console.log("실행됨 2");
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  var dLon = deg2rad(lon2 - lon1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return d * 1000; // Distance in m
 }
 
 function deg2rad(deg) {
-return deg * (Math.PI/180)
+  return deg * (Math.PI / 180);
+}
+
+remove();
+function remove() {
+  map.setOptions({ zoomControl: false }); // 지도 옵션 줌컨트롤 표출 비활성화
 }

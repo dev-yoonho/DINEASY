@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./안내종료.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div36">
+      <div class="div37">
+        <b class="b48">안내 종료</b>
+        <button class="button45" id="button">
+          <img class="vector-icon15" alt="" src="./public/vector4.svg" />
+        </button>
+      </div>
+      <p class="p30" style="color: #280FC2;">
+        <span class="span3">음식점에 </span>
+        <span class="span3">도착하였습니다</span>
+      </p>
+      <div class="voice-navigation6">
+        <button class="speaker-icon11" id="speakerIcon">
+          <img class="speaker-icon12" alt="" src="./public/speaker2.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      </script>
+  </body>
+</html>

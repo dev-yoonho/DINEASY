@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./사용방법_길안내방법.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div42">
+      <div class="div43"></div>
+      <div class="div44">
+        <div class="child33"></div>
+        <b class="b51">길 안내 방법</b>
+        <button class="button50" id="button">
+          <img class="vector-icon26" alt="" src="./public/vector1.svg" />
+        </button>
+      </div>
+      <div class="div45">
+        <div class="div46">
+          <p class="p39">
+            <b>
+              <span>길 안내 방법</span>
+            </b>
+          </p>
+          <p class="p40">
+            <b>
+              <span> </span>
+            </b>
+          </p>
+          <p class="p41">
+            <span>
+              <span
+                >가고 싶은 음식점을 고르시면 음성으로 길 안내가 시작됩니다.
+                화면상단으로 또한 길안내 내용을 읽는게 가능합니다. 
+                안내에 따라 이동을 하면 실시간으로 현위치가 바뀌는걸 확인하실 수 있습니다.
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="parent1">
+        <button class="button51" id="button1">
+          <img class="vector-icon27" alt="" src="./public/뒤로가기아이콘.svg" />
+        </button>
+        <button class="button52" id="button2">
+          <img class="icon26" alt="" src="./public/-.svg" />
+
+          <b class="b52">시작하기</b>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./사용방법.html";
+        });
+      }
+      
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+          window.location.href = "./HomeMap.html";
+        });
+      }
+      </script>
+  </body>
+</html>

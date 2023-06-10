@@ -1,0 +1,269 @@
+.gradient {
+  position: absolute;
+  top: 503px;
+  left: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0),
+    rgba(0, 0, 0, 0.59)
+  );
+  width: 380px;
+  height: 139px;
+}
+
+.resList {
+  position: absolute;
+  top: 72px;
+  left: 25px;
+  width: 370px;
+  height: 568px;
+  overflow-y: auto;
+}
+
+.buttonRest {
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  border: 5px solid var(--color-black);
+  box-sizing: border-box;
+  width: 330px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.image-icon {
+  border-radius: 25px;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  position: absolute;
+  left: 39px;
+}
+
+.restaurantName {
+  font-size: 25px;
+  font-family: var(--font-inter);
+  color: black;
+  text-align: center;
+}
+
+.restaurantInfo {
+  width: 150px;
+  height: 150px;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  font-size: large;
+  position: relative;
+  left: 150px;
+}
+
+.icon18 {
+  top: 7px;
+  left: 0;
+  width: 402px;
+  height: 658px;
+  object-fit: cover;
+}
+.b35,
+.child23,
+.icon18 {
+  position: absolute;
+}
+.child23 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-lavenderblush);
+  width: 362px;
+  height: 72px;
+}
+.b35 {
+  top: 19px;
+  left: 113px;
+}
+.button35,
+.vector-icon7 {
+  position: absolute;
+  overflow: hidden;
+}
+.vector-icon7 {
+  height: 76.35%;
+  width: 97.58%;
+  top: 11.62%;
+  right: 0.98%;
+  bottom: 12.03%;
+  left: 1.45%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.button35 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 19px;
+  left: 16px;
+  width: 37px;
+  height: 37px;
+}
+.div21 {
+  top: 0;
+  left: 0;
+  width: 362px;
+  height: 72px;
+}
+.b36,
+.child24,
+.div21 {
+  position: absolute;
+}
+.child24 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  border: 5px solid var(--color-black);
+  box-sizing: border-box;
+  width: 329px;
+  height: 227px;
+}
+.b36 {
+  top: 24px;
+  left: 93px;
+  font-size: var(--font-size-16xl);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+}
+
+
+.image-4-icon {
+  position: absolute;
+  top: 78px;
+  left: 23px;
+  border-radius: var(--br-11xl);
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+}
+
+.b37,
+.child25 {
+  position: absolute;
+}
+.child25 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-11xl);
+  background-color: #d9d9d9;
+  width: 329px;
+  height: 227px;
+}
+.b37 {
+  top: 30px;
+  left: 97px;
+  font-size: var(--font-size-16xl);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+}
+
+.span1 {
+  font-size: var(--font-size-6xl);
+}
+.span2 {
+  font-size: 20px;
+}
+.m2 {
+  position: absolute;
+  top: 87px;
+  left: 157px;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+}
+.image-3-icon {
+  top: 83px;
+  left: 23px;
+  border-radius: var(--br-11xl);
+  width: 112px;
+  height: 108px;
+  object-fit: cover;
+}
+.b38,
+.image-3-icon {
+  position: absolute;
+}
+
+.b38 {
+  top: 23px;
+  left: 93px;
+  font-size: var(--font-size-16xl);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: center;
+}
+.image-3-icon1 {
+  position: absolute;
+  top: 594px;
+  left: 28px;
+  border-radius: var(--br-11xl);
+  width: 107px;
+  height: 114px;
+  object-fit: cover;
+}
+
+
+
+.mic-icon2,
+.mic-icon3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 112px;
+  height: 112px;
+}
+.mic-icon2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.speaker-icon2,
+.speaker-icon3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 79px;
+  height: 79px;
+}
+.speaker-icon2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 16px;
+  left: 134px;
+}
+.voice-navigation {
+  position: absolute;
+  top: 513px;
+  left: 133px;
+  width: 213px;
+  height: 112px;
+}
+.div20 {
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 100%;
+  height: 640px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-9xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

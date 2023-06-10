@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./사용방법_음식점필터링.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div35">
+      <div class="div36">
+        <div class="div37">
+          <p class="p22">
+            <b>
+              음식점 필터링 소개
+            </b>
+          </p>
+          <p class="p24">
+            원하는 음식 종류에 따라 음식점 필터링이 가능합니다. 카테고리는 5가지가 있습니다: 한식, 중식, 양식, 일식, 분식 <br><br>
+          </p>
+          <p class="p23">
+          <p class="p22">
+            <b>
+              필터링 버튼 위치
+            </b>
+          </p>
+          <p class="p24">
+            필터링 버튼의 접근경로는 2가지가 있습니다. <br>
+            <span style="font-size: smaller;">1. (모든)화면>메뉴>근처 음식점</span><br>
+            <span style="font-size: smaller;">2. 현재위치>근처음식점</span><br><br>
+          </p>
+          <p class="p22">
+            <b>
+              필터링 음성 명령
+            </b>
+          </p>
+          <p class="p24">
+            음식점 필터링 페이지는 음성 명령을 통해 이용가능합니다. 음성안내가 나온 후, 원하시는 음식 종류(예. “한식”)를 음성으로 말해주시면 필터링이 완료된 음식점 리스트를 확인하실 수 있습니다.<br><br>
+          </p>
+        </div>
+      </div>
+      <div class="div40"></div>
+      <div class="div41">
+        <div class="child32"></div>
+        <b class="b49">음식점 필터링</b>
+        <button class="button47" id="button">
+          <img class="vector-icon22" alt="" src="./public/vector2.svg" />
+        </button>
+      </div>
+      <div class="group-div">
+        <button class="button48" id="button1">
+          <img class="vector-icon24" alt="" src="./public/뒤로가기아이콘.svg"/>
+        </button>
+        <button class="button49" id="button2">
+          <img class="icon25" alt="" src="./public/-.svg" />
+          <b class="b50">시작하기</b>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./사용방법.html";
+        });
+      }
+      
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+          window.location.href = "./HomeMap.html";
+        });
+      }
+      </script>
+  </body>
+</html>

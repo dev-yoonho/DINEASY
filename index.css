@@ -58,6 +58,7 @@
   width: 205px;
   height: 64px;
 }
+
 .dineasy-icon,
 .navi {
   position: absolute;
@@ -77,7 +78,7 @@
   position: relative;
   border-radius: var(--br-11xl);
   background-color: var(--color-lavenderblush);
-  width: 100%;
+  width: 362px;
   height: 640px;
   overflow: hidden;
 }

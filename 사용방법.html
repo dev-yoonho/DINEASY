@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./사용방법.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div7">
+      <div class="div8">
+        <div class="inner"></div>
+        <b class="b7">사용 방법</b>
+        <button class="button6" id="button">
+          <img class="vector-icon5" alt="" src="./public/vector1.svg" />
+        </button>
+      </div>
+      <button class="button7" id="button1">
+        <img class="icon7" alt="" src="./public/-.svg" />
+
+        <b class="b8">시작하기</b>
+      </button>
+      <div class="navi1">
+        <button class="button8" id="button2">
+          <div class="rectangle-div"></div>
+          <b class="b9">시작 가이드</b>
+        </button>
+        <button class="button9" id="button3">
+          <div class="rectangle-div"></div>
+          <b class="b10">음식점 필터링</b>
+        </button>
+        <button class="button10" id="button4">
+          <div class="rectangle-div"></div>
+          <b class="b11">길 안내 방법</b>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./HomeMap.html";
+        });
+      }
+      
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+          window.location.href = "./사용방법_시작가이드.html";
+        });
+      }
+      
+      var button3 = document.getElementById("button3");
+      if (button3) {
+        button3.addEventListener("click", function (e) {
+          window.location.href = "./사용방법_음식점필터링.html";
+        });
+      }
+      
+      var button4 = document.getElementById("button4");
+      if (button4) {
+        button4.addEventListener("click", function (e) {
+          window.location.href = "./사용방법_길안내방법.html";
+        });
+      }
+      </script>
+  </body>
+</html>
