@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <script>window.localStorage.clear();</script>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./index.css" />
     <link
@@ -15,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
     />
   </head>
-  <body>
+  <body onload="window.localStorage.clear();">
     <div class="landing-page">
       <main class="navi">
         <button class="button" id="button">
