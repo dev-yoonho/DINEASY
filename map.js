@@ -231,7 +231,7 @@ function success(position) {
     ) {
       console.log("실행됨 4" + description);
       var nowDescription = description;
-      var outputDiv = document.getElementById("textOutput");
+      var outputDiv = document.getElementByClass("home-map-child");
       outputDiv.textContent = description;
       console.log(nowDescription);
       speech(description);
