@@ -231,13 +231,13 @@ function success(position) {
     ) {
       console.log("실행됨 4" + description);
       var nowDescription = description;
-      var outputDiv = document.getElementByClass("home-map-child");
+      var outputDiv = document.getElementById("textOutput");
       outputDiv.textContent = description;
       console.log(nowDescription);
       speech(description);
       printedDescriptions.add(description);
       if (nowDescription.toString() == "도착") {
-        window.location.href = "안내종료.html";
+        goNext("Component7");
       }
     }
   });
