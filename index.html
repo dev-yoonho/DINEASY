@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
     />
   </head>
-  <body onload="window.localStorage.clear();">
+  <body>
     <div class="landing-page">
       <main class="navi">
         <button class="button" id="button">
@@ -33,6 +33,7 @@
       if (button) {
         button.addEventListener("click", function (e) {
           window.location.href = "./HomeMap.html";
+          window.localStorage.clear();
         });
       }
       
