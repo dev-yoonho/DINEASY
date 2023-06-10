@@ -19,7 +19,42 @@
   <body onload="initTmap();getRoad()">
     <div class="div38">
       <div id="map_div"></div>
-      <script>
+      
+      
+      <div class="div40">
+        <b class="b50">길 안내</b>
+         <div class="home-map-child"></div>
+        <div class="rectangle">
+          <div class="m8">
+            <div id="textOutput"></div>
+          </div>-
+        </div>
+        <button class="button46" id="button">
+          <img class="vector-icon16" alt="" src="./public/vector5.svg" />
+        </button>
+      </div>
+      <div class="voice-navigation7">
+        <button class="speaker-icon13" id="btn" onclick="sayAgain()">
+          <img class="speaker-icon14" alt="" src="./public/speaker1.svg" />
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var speakerIcon = document.getElementById("speakerIcon");
+      if (speakerIcon) {
+        speakerIcon.addEventListener("click", function (e) {
+          window.location.href = "./Component3.html";
+        });
+      }
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./Menu.html";
+        });
+      }
+    </script>
+    <script>
       var coordinatesAndDescriptions = []; // 전역 범위에서 정의
 
       function getRoad() {
@@ -70,41 +105,6 @@
         localStorage.setItem('coordinatesAndDescriptions', JSON.stringify(coordinatesAndDescriptions));
       });
     }
-      
-      
-      <div class="div40">
-        <b class="b50">길 안내</b>
-         <div class="home-map-child"></div>
-        <div class="rectangle">
-          <div class="m8">
-            <div id="textOutput"></div>
-          </div>-
-        </div>
-        <button class="button46" id="button">
-          <img class="vector-icon16" alt="" src="./public/vector5.svg" />
-        </button>
-      </div>
-      <div class="voice-navigation7">
-        <button class="speaker-icon13" id="btn" onclick="sayAgain()">
-          <img class="speaker-icon14" alt="" src="./public/speaker1.svg" />
-        </button>
-      </div>
-    </div>
-
-    <script>
-      var speakerIcon = document.getElementById("speakerIcon");
-      if (speakerIcon) {
-        speakerIcon.addEventListener("click", function (e) {
-          window.location.href = "./Component3.html";
-        });
-      }
-      var button = document.getElementById("button");
-      if (button) {
-        button.addEventListener("click", function (e) {
-          window.location.href = "./Menu.html";
-        });
-      }
-    </script>
     <script src="map.js"></script>
     <script src="sayThis.js"></script>
     <script src="coordSpeech.js"></script>
