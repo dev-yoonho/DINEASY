@@ -237,7 +237,7 @@ function success(position) {
       speech(description);
       printedDescriptions.add(description);
       if (nowDescription.toString() == "도착") {
-        goNext("Component7");
+        window.location.href = "안내종료.html"
       }
     }
   });
