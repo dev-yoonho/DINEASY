@@ -19,7 +19,7 @@ DINEASY 는 시각장애인, 저시력자, 시니어 등 ‘시각의 보조'가
 
 
 <h4><strong>▶ 실현 비디오 (Demo)</strong></h4>
-[![Video Title](https://img.youtube.com/vi/p_mGoO7FsWs/0.jpg)](https://youtu.be/p_mGoO7FsWs)
+<video src='https://youtu.be/p_mGoO7FsWs'/>
 
 <h4><strong>⚙적용 기술 소개 (HTML & Web APIs 등)</strong></h4>
 
