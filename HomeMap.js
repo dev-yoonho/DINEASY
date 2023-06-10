@@ -1,5 +1,6 @@
 var map;
 
+
 if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition((position) => {
     const latHome = position.coords.latitude;
