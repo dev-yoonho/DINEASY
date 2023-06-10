@@ -19,6 +19,59 @@
   <body onload="initTmap();remove()">
     <div class="div38">
       <div id="map_div"></div>
+      <script>
+      var coordinatesAndDescriptions = []; // 전역 범위에서 정의
+
+      function getRoad() {
+        const options = {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            appKey: "KThdzstXSE8XxtqffJ4IC5eV2M9jBSvH59JYlmWW",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            startX: currentCoords[1],
+            startY: currentCoords[0],
+            angle: 20,
+            speed: 5,
+            endPoiId: "10001",
+            endX: restaurantcoordinates[1],
+            endY: restaurantcoordinates[0],
+            reqCoordType: "WGS84GEO",
+            startName: "%EC%B6%9C%EB%B0%9C",
+            endName: "%EB%8F%84%EC%B0%A9",
+            searchOption: "0",
+            resCoordType: "WGS84GEO",
+            sort: "index",
+          }),
+        };
+
+        fetch(
+          "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&callback=function",
+          options
+        )
+          .then((response) => response.json())
+          .then((response) => {
+            coordinatesAndDescriptions = [];
+        for (var i = 0; i < response.features.length; i++) {
+          var feature = response.features[i];
+          if (
+            feature.type === "Feature" &&
+            feature.geometry.type === "Point"
+          ) {
+            var coordinates = feature.geometry.coordinates;
+            var description = feature.properties.description;
+            var tempBox = [coordinates[1], coordinates[0], description];
+            coordinatesAndDescriptions.push(tempBox);
+          }
+        }
+        // fetch 요청이 완료되면 localStorage에 저장
+        localStorage.setItem('coordinatesAndDescriptions', JSON.stringify(coordinatesAndDescriptions));
+      });
+    }
+      
+      
       <div class="div40">
         <b class="b50">길 안내</b>
          <div class="home-map-child"></div>
