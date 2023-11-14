@@ -26,6 +26,9 @@ Open API는 포털의 개방성을 높이기 위한 기술로, 다양한 응용�
   <img src="https://github.com/dev-yoonho/DINEASY/assets/124619604/40040b90-1024-4094-8056-f6d076f45f58">
 </p>
 다음은 사용자가 모바일 환경에서 Open API mashup으로 제공되는 서비스를 활용하는 모식도입니다. 사용자와 API, Web Application이 데이터를 주고받고 웹상에서 상호작용하는 과정을 확인할 수 있습니다.<br><br>
+<p align="center">
+  <img src="https://github.com/dev-yoonho/DINEASY/assets/124619604/c01beb60-f4d3-4832-8b19-87348b5888a1">
+</p>
 
 <h4><strong>⚙전체 시스템 구성</strong></h4>
 기본적인 어플리케이션 사용의 흐름 및 구성은 다음과 같습니다.<br><br>
