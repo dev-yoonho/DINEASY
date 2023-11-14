@@ -22,6 +22,9 @@ https://www.youtube.com/watch?v=p_mGoO7FsWs&ab_channel=NakyungKim
 <h4><strong>📃매시업 아키텍처</strong></h4>
 Open API는 포털의 개방성을 높이기 위한 기술로, 다양한 응용프로그램에서 플랫폼을 활용할 수 있도록 인터페이스를 제공합니다. Open API 등의 공개된 디지털 콘텐츠들이나 기존 서비스들을 조합하여 새로운 콘텐츠나 서비스를 만드는 Mashup 방식은 보다 간단하고 효율적인 웹 어플리케이션 개발이 가능하게 합니다.<br><br>
 다음은 본 프로젝트에서 Mobile Mash-Up 개발을 위해 활용한 API와 데이터 가공 및 활용을 나타낸 것입니다.<br><br>
+<p align="center">
+  <img src="https://github.com/dev-yoonho/DINEASY/assets/124619604/40040b90-1024-4094-8056-f6d076f45f58">
+</p>
 다음은 사용자가 모바일 환경에서 Open API mashup으로 제공되는 서비스를 활용하는 모식도입니다. 사용자와 API, Web Application이 데이터를 주고받고 웹상에서 상호작용하는 과정을 확인할 수 있습니다.<br><br>
 
 <h4><strong>⚙전체 시스템 구성</strong></h4>
